@@ -1,0 +1,269 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Light Mode Colors - BackstagePass Design System */
+  --background: 0 0% 100%;
+  --foreground: 222 47% 11%;
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+  --border: 214 32% 91%;
+  --input: 214 32% 91%;
+  --primary: 221 83% 53%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 210 40% 96%;
+  --secondary-foreground: 222 47% 11%;
+  --muted: 210 40% 96%;
+  --muted-foreground: 215 16% 47%;
+  --accent: 210 40% 96%;
+  --accent-foreground: 222 47% 11%;
+  --ring: 221 83% 53%;
+
+  /* Custom BackstagePass Colors - Light Mode */
+  --app-bg: 0 0% 100%; /* #fff - Pure white */
+  --text-primary: 222 47% 11%; /* #211F26 */
+  --text-secondary: 222 20% 50%;
+  --border-light: 300 15% 92%; /* #EAE7EC */
+  --border-subtle: 300 20% 95%; /* #F2EFF3 */
+  --border-button: 260 100% 10% / 0.27; /* rgba(8,0,49,0.27) */
+  --header-bg: 0 0% 100%;
+  --header-sub-bg: 0 0% 100% / 0.8; /* rgba(255,255,255,0.8) */
+  --publish-button: 45 100% 38%; /* #B8860b */
+  --notification-bg: 280 100% 13% / 0.06; /* rgba(48,0,64,0.06) */
+  --confetti-bg: 140 45% 92%; /* #E6F6EB */
+  --confetti-text: 150 60% 35%; /* #218358 */
+  --sidebar-bg: 0 0% 98%; /* #f9f9f9 */
+  --sidebar-overlay: 0 0% 100% / 0.8;
+}
+
+.dark {
+  /* Dark Mode Colors - BackstagePass Design System */
+  --background: 222 47% 11%;
+  --foreground: 210 40% 98%;
+  --card: 217 33% 17%;
+  --card-foreground: 210 40% 98%;
+  --border: 217 33% 17%;
+  --input: 217 33% 17%;
+  --primary: 217 91% 60%;
+  --primary-foreground: 222 47% 11%;
+  --secondary: 217 33% 17%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 217 33% 17%;
+  --muted-foreground: 215 20% 65%;
+  --accent: 217 33% 17%;
+  --accent-foreground: 210 40% 98%;
+  --ring: 217 91% 60%;
+
+  /* Custom BackstagePass Colors - Dark Mode */
+  --app-bg: 0 0% 0%; /* black */
+  --text-primary: 210 40% 98%; /* light text */
+  --text-secondary: 215 20% 65%;
+  --border-light: 217 33% 17% / 0.1;
+  --border-subtle: 217 33% 17% / 0.5;
+  --border-button: 217 33% 17% / 0.5;
+  --header-bg: 10 10% 10%; /* #1a191b - dark-gray */
+  --header-sub-bg: 8 8% 8%; /* #151518 - dark-gray-2 */
+  --publish-button: 45 100% 38%; /* #B8860b - same in dark */
+  --notification-bg: 217 33% 17% / 0.5;
+  --confetti-bg: 150 40% 15%; /* #1a3d2e */
+  --confetti-text: 150 70% 50%; /* green-400 */
+  --sidebar-bg: 0 0% 2%; /* #09090b */
+  --sidebar-overlay: 0 0% 2% / 0.9;
+}
+
+* {
+  @apply border-border;
+}
+
+body {
+  @apply bg-background text-foreground;
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+/* Confetti Animation Styles */
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+.confetti-particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: var(--confetti-color);
+  animation: confetti-fall 3s linear infinite;
+}
+
+/* Smooth transitions for theme switching */
+* {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.5);
+}
+
+/* Selection */
+::selection {
+  background: hsl(var(--primary) / 0.2);
+  color: hsl(var(--foreground));
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Light Mode Colors - BackstagePass Design System */
+  --background: 0 0% 100%;
+  --foreground: 222 47% 11%;
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+  --border: 214 32% 91%;
+  --input: 214 32% 91%;
+  --primary: 221 83% 53%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 210 40% 96%;
+  --secondary-foreground: 222 47% 11%;
+  --muted: 210 40% 96%;
+  --muted-foreground: 215 16% 47%;
+  --accent: 210 40% 96%;
+  --accent-foreground: 222 47% 11%;
+  --ring: 221 83% 53%;
+
+  /* Custom BackstagePass Colors - Light Mode */
+  --app-bg: 0 0% 100%; /* #fff - Pure white */
+  --text-primary: 222 47% 11%; /* #211F26 */
+  --text-secondary: 222 20% 50%;
+  --border-light: 300 15% 92%; /* #EAE7EC */
+  --border-subtle: 300 20% 95%; /* #F2EFF3 */
+  --border-button: 260 100% 10% / 0.27; /* rgba(8,0,49,0.27) */
+  --header-bg: 0 0% 100%;
+  --header-sub-bg: 0 0% 100% / 0.8; /* rgba(255,255,255,0.8) */
+  --publish-button: 45 100% 38%; /* #B8860b */
+  --notification-bg: 280 100% 13% / 0.06; /* rgba(48,0,64,0.06) */
+  --confetti-bg: 140 45% 92%; /* #E6F6EB */
+  --confetti-text: 150 60% 35%; /* #218358 */
+  --sidebar-bg: 0 0% 98%; /* #f9f9f9 */
+  --sidebar-overlay: 0 0% 100% / 0.8;
+}
+
+.dark {
+  /* Dark Mode Colors - BackstagePass Design System */
+  --background: 222 47% 11%;
+  --foreground: 210 40% 98%;
+  --card: 217 33% 17%;
+  --card-foreground: 210 40% 98%;
+  --border: 217 33% 17%;
+  --input: 217 33% 17%;
+  --primary: 217 91% 60%;
+  --primary-foreground: 222 47% 11%;
+  --secondary: 217 33% 17%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 217 33% 17%;
+  --muted-foreground: 215 20% 65%;
+  --accent: 217 33% 17%;
+  --accent-foreground: 210 40% 98%;
+  --ring: 217 91% 60%;
+
+  /* Custom BackstagePass Colors - Dark Mode */
+  --app-bg: 0 0% 0%; /* black */
+  --text-primary: 210 40% 98%; /* light text */
+  --text-secondary: 215 20% 65%;
+  --border-light: 217 33% 17% / 0.1;
+  --border-subtle: 217 33% 17% / 0.5;
+  --border-button: 217 33% 17% / 0.5;
+  --header-bg: 10 10% 10%; /* #1a191b - dark-gray */
+  --header-sub-bg: 8 8% 8%; /* #151518 - dark-gray-2 */
+  --publish-button: 45 100% 38%; /* #B8860b - same in dark */
+  --notification-bg: 217 33% 17% / 0.5;
+  --confetti-bg: 150 40% 15%; /* #1a3d2e */
+  --confetti-text: 150 70% 50%; /* green-400 */
+  --sidebar-bg: 0 0% 2%; /* #09090b */
+  --sidebar-overlay: 0 0% 2% / 0.9;
+}
+
+* {
+  @apply border-border;
+}
+
+body {
+  @apply bg-background text-foreground;
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+/* Confetti Animation Styles */
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+.confetti-particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: var(--confetti-color);
+  animation: confetti-fall 3s linear infinite;
+}
+
+/* Smooth transitions for theme switching */
+* {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.5);
+}
+
+/* Selection */
+::selection {
+  background: hsl(var(--primary) / 0.2);
+  color: hsl(var(--foreground));
+}
